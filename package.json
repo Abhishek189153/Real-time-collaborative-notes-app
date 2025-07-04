@@ -1,0 +1,14 @@
+{
+  "name": "collaborative-notes-app",
+  "version": "1.0.0",
+  "description": "Real-time collaborative notes application built with MERN stack",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
