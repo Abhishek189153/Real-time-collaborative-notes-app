@@ -18,12 +18,12 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/collaborative-notes')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// API Routes
+
 app.post('/notes', async (req, res) => {
   try {
     const note = new Note({ title: req.body.title });
@@ -57,7 +57,7 @@ app.put('/notes/:id', async (req, res) => {
   }
 });
 
-// Socket.IO
+
 const activeUsers = new Map();
 
 io.on('connection', (socket) => {
